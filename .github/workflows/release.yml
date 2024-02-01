@@ -36,4 +36,5 @@ jobs:
         echo "========================================================="
         go get github.com/tcnksm/ghr
         go install github.com/tcnksm/ghr
-        $GOPATH/bin/ghr -n ${TAGNAME} -b "ʕ◔ϖ◔ʔ Release ${TAGNAME}" -draft ${TAGNAME} pkg/
+        set -x
+        $GOPATH/bin/ghr -n ${TAGNAME} -b "ʕ◔ϖ◔ʔ Release ${TAGNAME}" ${TAGNAME} pkg/
