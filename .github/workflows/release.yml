@@ -35,5 +35,6 @@ jobs:
         ls pkg/
         echo "========================================================="
         go install github.com/tcnksm/ghr
+        go get -u github.com/tcnksm/ghr
         $GOPATH/bin/ghr -n ${TAGNAME} -b "ʕ◔ϖ◔ʔ Release ${TAGNAME}" -draft ${TAGNAME} pkg/
 
