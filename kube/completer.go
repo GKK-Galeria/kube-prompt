@@ -3,7 +3,7 @@ package kube
 import (
 	"os"
 	"strings"
-
+"context"
 	"github.com/c-bata/go-prompt"
 	"github.com/c-bata/go-prompt/completer"
 	corev1 "k8s.io/api/core/v1"
@@ -35,7 +35,7 @@ func NewCompleter() (*Completer, error) {
 		return nil, err
 	}
 
-	namespaces, err := client.CoreV1().Namespaces().List(metav1.ListOptions{})
+	namespaces, err := client.CoreV1().Namespaces().List(context.TODO(),metav1.ListOptions{})
 	if err != nil {
 		if statusError, ok := err.(*errors.StatusError); ok && statusError.Status().Code == 403 {
 			namespaces = nil
@@ -244,3 +244,4 @@ func excludeOptions(args []string) ([]string, bool) {
 	}
 	return filtered, skipNextArg
 }
+
