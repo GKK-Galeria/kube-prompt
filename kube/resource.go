@@ -961,3 +961,4 @@ func getJobSuggestions(client *kubernetes.Clientset, namespace string) []prompt.
 	}
 	return s
 }
+
