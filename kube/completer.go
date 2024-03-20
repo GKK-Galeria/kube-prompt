@@ -2,9 +2,6 @@ package kube
 
 import (
 	"context"
-	"os"
-	"strings"
-"context"
 	"github.com/c-bata/go-prompt"
 	"github.com/c-bata/go-prompt/completer"
 	corev1 "k8s.io/api/core/v1"
@@ -12,6 +9,8 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/clientcmd"
+	"os"
+	"strings"
 )
 
 func NewCompleter() (*Completer, error) {
@@ -245,4 +244,3 @@ func excludeOptions(args []string) ([]string, bool) {
 	}
 	return filtered, skipNextArg
 }
-
